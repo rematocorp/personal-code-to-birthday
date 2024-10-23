@@ -28,21 +28,21 @@ console.log(birthday) // outputs { day: 26, month: 9, year: 1993 }
 -   🇸🇪 Sweden
 -   🇳🇴 Norway
 -   🇩🇰 Denmark
+-   🇺🇦 Ukraine
+-   🇵🇱 Poland
 
 Countries we would like to support (PRs are welcome):
 
--   Ukraine
 -   Iceland
--   South Africa
 -   Romania
 -   Hungary
 -   Bulgaria
+-   Moldova
+-   Azerbaijan
 -   North Macedonia
 -   Czech Republic
 -   Slovakia
--   Poland
 -   South Korea
 -   Turkey
--   Moldova
--   Azerbaijan
+-   South Africa
 -   Russia

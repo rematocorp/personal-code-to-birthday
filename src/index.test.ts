@@ -2,8 +2,10 @@ import personalCodeToBirthday from './index'
 
 describe('valid codes', () => {
 	test('Estonia', () => {
-		expect(personalCodeToBirthday('39405280299')).toEqual({ day: 28, month: 5, year: 1994 })
-		expect(personalCodeToBirthday('60105280299')).toEqual({ day: 28, month: 5, year: 2001 })
+		expect(personalCodeToBirthday('39309262754')).toEqual({ day: 26, month: 9, year: 1993 })
+		expect(personalCodeToBirthday('49111012217')).toEqual({ day: 1, month: 11, year: 1991 })
+		expect(personalCodeToBirthday('30001010060')).toEqual({ day: 1, month: 1, year: 1900 })
+		expect(personalCodeToBirthday('62305060020')).toEqual({ day: 6, month: 5, year: 2023 })
 	})
 
 	test('Latvia', () => {
@@ -12,7 +14,7 @@ describe('valid codes', () => {
 	})
 
 	test('Lithuania', () => {
-		expect(personalCodeToBirthday('39905280217')).toEqual({ day: 28, month: 5, year: 1999 })
+		expect(personalCodeToBirthday('39905280216')).toEqual({ day: 28, month: 5, year: 1999 })
 	})
 
 	test('Finland', () => {
@@ -31,17 +33,27 @@ describe('valid codes', () => {
 	})
 
 	test('Denmark', () => {
-		expect(personalCodeToBirthday('0503054567')).toEqual({ day: 5, month: 3, year: 2005 })
-		expect(personalCodeToBirthday('0503841235')).toEqual({ day: 5, month: 3, year: 1984 })
+		expect(personalCodeToBirthday('050305-4567')).toEqual({ day: 5, month: 3, year: 2005 })
 		expect(personalCodeToBirthday('050384-1235')).toEqual({ day: 5, month: 3, year: 1984 })
-		expect(personalCodeToBirthday('0503844567')).toEqual({ day: 5, month: 3, year: 1984 })
+		expect(personalCodeToBirthday('050384-4567')).toEqual({ day: 5, month: 3, year: 1984 })
+	})
+
+	test('Ukraine', () => {
+		expect(personalCodeToBirthday('3406105372')).toEqual({ day: 3, month: 4, year: 1993 })
+		expect(personalCodeToBirthday('3406105350')).toEqual({ day: 3, month: 4, year: 1993 })
+	})
+
+	test('Poland', () => {
+		expect(personalCodeToBirthday('44051401359')).toEqual({ day: 14, month: 5, year: 1944 })
+		expect(personalCodeToBirthday('02070803628')).toEqual({ day: 8, month: 7, year: 1902 })
+		expect(personalCodeToBirthday('24231012344')).toEqual({ day: 10, month: 3, year: 2024 })
 	})
 })
 
 describe('invalid personal code', () => {
 	test('Estonia', () => {
-		const result = personalCodeToBirthday('39913025555')
-		expect(result).toBeNull()
+		expect(personalCodeToBirthday('39911025555')).toBeNull()
+		expect(personalCodeToBirthday('39913035552')).toBeNull()
 	})
 
 	test('Latvia', () => {
@@ -56,6 +68,7 @@ describe('invalid personal code', () => {
 		expect(personalCodeToBirthday('999999A123T')).toBeNull()
 		expect(personalCodeToBirthday('131052Z3087')).toBeNull()
 		expect(personalCodeToBirthday('321052A3087')).toBeNull()
+		expect(personalCodeToBirthday('910100A123F')).toBeNull()
 	})
 
 	test('Sweden', () => {
@@ -69,11 +82,19 @@ describe('invalid personal code', () => {
 	})
 
 	test('Denmark', () => {
-		expect(personalCodeToBirthday('9999991234')).toBeNull()
+		expect(personalCodeToBirthday('999999-1234')).toBeNull()
 	})
 
-	test('unsupported personal code format', () => {
-		const result = personalCodeToBirthday('abcd1234')
-		expect(result).toBeNull()
+	test('Ukraine', () => {
+		expect(personalCodeToBirthday('3406105373')).toBeNull()
+	})
+
+	test('Poland', () => {
+		expect(personalCodeToBirthday('24231012343')).toBeNull()
+		expect(personalCodeToBirthday('24234012341')).toBeNull()
+	})
+
+	test('unidentified personal code format', () => {
+		expect(personalCodeToBirthday('abcd1234')).toBeNull()
 	})
 })

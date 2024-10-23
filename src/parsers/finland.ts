@@ -2,6 +2,10 @@ import { ParsedDate } from '../types'
 import { isValidDate } from '../utils'
 
 export default function finlandParser(code: string): ParsedDate | null {
+	if (!isValidChecksum(code)) {
+		return null
+	}
+
 	const day = parseInt(code.slice(0, 2), 10)
 	const month = parseInt(code.slice(2, 4), 10)
 	const yearSuffix = parseInt(code.slice(4, 6), 10)
@@ -23,14 +27,10 @@ export default function finlandParser(code: string): ParsedDate | null {
 		return null
 	}
 
-	if (!isValidFinnishChecksum(code)) {
-		return null
-	}
-
 	return { day, month, year }
 }
 
-function isValidFinnishChecksum(code: string): boolean {
+function isValidChecksum(code: string): boolean {
 	const validChars = '0123456789ABCDEFHJKLMNPRSTUVWXY'
 
 	const serial = code.slice(0, 6) + code.slice(7, 10)
