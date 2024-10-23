@@ -1,6 +1,10 @@
-# personal-code-to-birthday
+# Personal Code to Birthday
 
-Converts personal identification codes from various countries into birthdate.
+Converts personal identification codes (or national ID numbers) from various countries into birthdate.
+
+```bash
+npm install @remato/personal-code-to-birthday
+```
 
 ```ts
 const birthday = personalCodeToBirthday('39309262855')
