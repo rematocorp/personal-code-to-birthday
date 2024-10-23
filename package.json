@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "Converts personal identification codes from various countries into birthdate",
 	"license": "MIT",
-	"main": "index.ts",
+	"main": "src/index.ts",
 	"scripts": {
 		"build": "ncc build index.ts",
 		"test": "jest",
