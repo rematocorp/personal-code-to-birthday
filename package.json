@@ -4,6 +4,9 @@
 	"description": "Converts personal identification codes from various countries into birthdate",
 	"license": "MIT",
 	"main": "src/index.ts",
+	"repository": {
+		"url": "https://github.com/rematocorp/personal-code-to-birthday"
+	},
 	"scripts": {
 		"build": "ncc build src/index.ts",
 		"test": "jest",
