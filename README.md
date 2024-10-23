@@ -31,6 +31,7 @@ console.log(birthday) // outputs { day: 26, month: 9, year: 1993 }
 
 Countries we would like to support (PRs are welcome):
 
+-   Ukraine
 -   Iceland
 -   South Africa
 -   Romania
@@ -45,4 +46,3 @@ Countries we would like to support (PRs are welcome):
 -   Moldova
 -   Azerbaijan
 -   Russia
--   Ukraine
