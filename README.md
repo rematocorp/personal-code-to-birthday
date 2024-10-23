@@ -1,5 +1,8 @@
 # Personal Code to Birthday
 
+[![Build](https://img.shields.io/github/actions/workflow/status/rematocorp/personal-code-to-birthday/ci.yml)](https://github.com/rematocorp/personal-code-to-birthday/actions/workflows/ci.yml)
+[![Codecov](https://img.shields.io/codecov/c/github/rematocorp/personal-code-to-birthday?token=NDT35FM2LG&style=flat)](https://codecov.io/gh/rematocorp/personal-code-to-birthday)
+
 Converts personal identification codes (or national ID numbers) from various countries into birthdate.
 
 ```bash
