@@ -10,7 +10,7 @@ import { ParsedDate } from './types'
 
 export default function personalCodeToBirthday(code: string): ParsedDate | null {
 	if (/^\d{10}$/.test(code)) {
-		return ukraineParser(code)
+		return ukraineParser(code) || swedenParser(code)
 	} else if (/^\d{11}$/.test(code)) {
 		return estoniaLithuaniaParser(code) || polandParser(code) || norwayParser(code)
 	} else if (/^\d{12}$/.test(code)) {
@@ -19,8 +19,12 @@ export default function personalCodeToBirthday(code: string): ParsedDate | null 
 		return latviaParser(code)
 	} else if (/^\d{6}[+-A]\d{3}[A-Za-z]$/.test(code)) {
 		return finlandParser(code)
-	} else if (/^\d{6}[+-A]\d{4}$/.test(code)) {
-		return finlandParser(code) || denmarkParser(code)
+	} else if (/^\d{6}[-]\d{4}$/.test(code)) {
+		return finlandParser(code) || swedenParser(code) || denmarkParser(code)
+	} else if (/^\d{6}[A]\d{4}$/.test(code)) {
+		return finlandParser(code)
+	} else if (/^\d{8}[-]\d{4}$/.test(code)) {
+		return swedenParser(code)
 	}
 
 	return null

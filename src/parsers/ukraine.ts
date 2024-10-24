@@ -1,4 +1,5 @@
 import { ParsedDate } from '../types'
+import { isValidDate } from '../utils'
 
 export default function ukrainianParser(code: string): ParsedDate | null {
 	if (!isValidChecksum(code)) {
@@ -15,6 +16,10 @@ export default function ukrainianParser(code: string): ParsedDate | null {
 	const day = birthDate.getDate()
 	const month = birthDate.getMonth() + 1 // getMonth is zero-based
 	const year = birthDate.getFullYear()
+
+	if (!isValidDate(day, month, year)) {
+		return null
+	}
 
 	return { day, month, year }
 }

@@ -15,7 +15,6 @@ export default function norwayParser(code: string): ParsedDate | null {
 		year += 2000
 	}
 
-	// Now validate the date after adjusting the century
 	if (!isValidDate(day, month, year)) {
 		return null
 	}

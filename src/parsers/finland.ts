@@ -14,15 +14,12 @@ export default function finlandParser(code: string): ParsedDate | null {
 	let year = yearSuffix
 
 	// Handle the century based on the marker
-	if (centuryMarker === '+') {
-		year += 1800
-	} else if (centuryMarker === '-') {
+	if (centuryMarker === '-') {
 		year += 1900
 	} else if (centuryMarker === 'A') {
 		year += 2000
 	}
 
-	// Validate the parsed date
 	if (!isValidDate(day, month, year)) {
 		return null
 	}
