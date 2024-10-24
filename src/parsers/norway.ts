@@ -12,7 +12,7 @@ export default function norwayParser(code: string): ParsedDate | null {
 
 	const centuryMarker = parseInt(code.slice(6, 7), 10)
 
-	// Determine century based on individual number and year
+	// Read more https://en.wikipedia.org/wiki/National_identity_number_(Norway)#Numerical_components
 	if (centuryMarker <= 4 || centuryMarker === 9) {
 		year += year >= 40 ? 1900 : 2000
 	} else if (centuryMarker >= 5 && centuryMarker <= 8) {

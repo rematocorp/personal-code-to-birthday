@@ -9,8 +9,9 @@ describe('valid codes', () => {
 	})
 
 	test('Latvia', () => {
-		expect(personalCodeToBirthday('050393-12344')).toEqual({ day: 5, month: 3, year: 1993 })
-		expect(personalCodeToBirthday('050303-22344')).toEqual({ day: 5, month: 3, year: 2003 })
+		expect(personalCodeToBirthday('240860-28074')).toEqual({ day: 24, month: 8, year: 1960 })
+		expect(personalCodeToBirthday('071023-38935')).toEqual({ day: 7, month: 10, year: 2023 })
+		expect(personalCodeToBirthday('240860-20090')).toEqual({ day: 24, month: 8, year: 1960 })
 	})
 
 	test('Lithuania', () => {
@@ -65,7 +66,8 @@ describe('invalid personal code', () => {
 	})
 
 	test('Latvia', () => {
-		expect(personalCodeToBirthday('123456-12345')).toBeNull()
+		expect(personalCodeToBirthday('071023-38934')).toBeNull()
+		expect(personalCodeToBirthday('071523-38937')).toBeNull()
 	})
 
 	test('Lithuania', () => {
