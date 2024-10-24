@@ -34,7 +34,10 @@ describe('valid codes', () => {
 	})
 
 	test('Norway', () => {
-		expect(personalCodeToBirthday('01020352345')).toEqual({ day: 1, month: 2, year: 2003 })
+		expect(personalCodeToBirthday('10021559844')).toEqual({ day: 10, month: 2, year: 2015 })
+		expect(personalCodeToBirthday('100215 59844')).toEqual({ day: 10, month: 2, year: 2015 })
+		expect(personalCodeToBirthday('10028439895')).toEqual({ day: 10, month: 2, year: 1984 })
+		expect(personalCodeToBirthday('27081439368')).toEqual({ day: 27, month: 8, year: 2014 })
 	})
 
 	test('Denmark', () => {
@@ -83,6 +86,8 @@ describe('invalid personal code', () => {
 
 	test('Norway', () => {
 		expect(personalCodeToBirthday('32129999999')).toBeNull()
+		expect(personalCodeToBirthday('32132811465')).toBeNull()
+		expect(personalCodeToBirthday('32112812600')).toBeNull()
 	})
 
 	test('Denmark', () => {

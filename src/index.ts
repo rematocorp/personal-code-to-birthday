@@ -9,6 +9,8 @@ import ukraineParser from './parsers/ukraine'
 import { ParsedDate } from './types'
 
 export default function personalCodeToBirthday(code: string): ParsedDate | null {
+	code = code.replace(' ', '')
+
 	if (/^\d{10}$/.test(code)) {
 		return ukraineParser(code) || swedenParser(code)
 	} else if (/^\d{11}$/.test(code)) {
