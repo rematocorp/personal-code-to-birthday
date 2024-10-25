@@ -1,0 +1,2 @@
+-   Make sure your changes are [prettified](https://prettier.io/) (you can use `npm run prettier`)
+-   Add unit tests to maintain 100% coverage
