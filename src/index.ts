@@ -4,6 +4,7 @@ import finlandParser from './parsers/finland'
 import latviaParser from './parsers/latvia'
 import norwayParser from './parsers/norway'
 import polandParser from './parsers/poland'
+import romaniaParser from './parsers/romania'
 import swedenParser from './parsers/sweden'
 import ukraineParser from './parsers/ukraine'
 import { ParsedDate } from './types'
@@ -17,6 +18,8 @@ export default function personalCodeToBirthday(code: string): ParsedDate | null 
 		return estoniaLithuaniaParser(code) || polandParser(code) || norwayParser(code)
 	} else if (/^\d{12}$/.test(code)) {
 		return swedenParser(code)
+	} else if (/^\d{13}$/.test(code)) {
+		return romaniaParser(code)
 	} else if (/^\d{6}-\d{5}$/.test(code)) {
 		return latviaParser(code)
 	} else if (/^\d{6}[+-A]\d{3}[A-Za-z]$/.test(code)) {

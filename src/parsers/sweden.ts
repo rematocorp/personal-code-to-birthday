@@ -35,7 +35,7 @@ export default function swedenParser(code: string): ParsedDate | null {
 	return { day, month, year }
 }
 
-function isValidChecksum(code: string) {
+function isValidChecksum(code: string): boolean {
 	// Use the last 9 digits without checksum number
 	const digits = code.length === 12 ? code.slice(2, 11) : code.slice(0, 9)
 

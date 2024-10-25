@@ -58,6 +58,12 @@ describe('valid codes', () => {
 		expect(personalCodeToBirthday('02070803628')).toEqual({ day: 8, month: 7, year: 1902 })
 		expect(personalCodeToBirthday('24231012344')).toEqual({ day: 10, month: 3, year: 2024 })
 	})
+
+	test('Romania', () => {
+		expect(personalCodeToBirthday('1900101220018')).toEqual({ day: 1, month: 1, year: 1990 })
+		expect(personalCodeToBirthday('6010303275841')).toEqual({ day: 3, month: 3, year: 2001 })
+		expect(personalCodeToBirthday('2990721275847')).toEqual({ day: 21, month: 7, year: 1999 })
+	})
 })
 
 describe('invalid personal code', () => {
@@ -106,6 +112,11 @@ describe('invalid personal code', () => {
 	test('Poland', () => {
 		expect(personalCodeToBirthday('24231012343')).toBeNull()
 		expect(personalCodeToBirthday('24234012341')).toBeNull()
+	})
+
+	test('Romania', () => {
+		expect(personalCodeToBirthday('1980521275840')).toBeNull()
+		expect(personalCodeToBirthday('1234567890128')).toBeNull()
 	})
 
 	test('unidentified personal code format', () => {
