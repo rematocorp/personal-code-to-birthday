@@ -50,5 +50,6 @@
 		"extends": [
 			"@remato/eslint-config/typescript"
 		]
-	}
+	},
+	"prettier": "@remato/prettier-config"
 }
