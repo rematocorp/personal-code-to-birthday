@@ -44,3 +44,19 @@ console.log(birthday) // outputs { day: 26, month: 9, year: 1993 }
 10. 🇷🇴 Romania
 
 Need support for a new country or have feedback? [Create an issue.](https://github.com/rematocorp/personal-code-to-birthday/issues/new)
+
+### Random facts
+
+1. In Ukraine, the first five digits of the code indicate birthdate as days since January 1, 1900
+2. Estonia and Lithuania use a nearly identical personal code system.
+3. Denmark dropped the check digit in 2007 due to running out of available numbers.
+4. Latvia removed the birthdate component from their new personal codes starting in 2017.
+5. In Sweden, individuals who turn 100 receive a new personal code, where “-” is replaced by “+”.
+6. Norway plans to remove gender and century indicators from personal codes in 2032.
+7. Finland’s personal codes use “-,” “+,” and “A” to mark centuries and include both numbers and letters for the checksum.
+8. Romania’s personal code includes a county indicator.
+9. Poland’s system differentiates centuries by altering the month digits.
+
+### Authors
+
+Created by the [Remato team](https://remato.com) to auto-complete birthdate entries based on the construction worker’s personal ID input (country unknown).
