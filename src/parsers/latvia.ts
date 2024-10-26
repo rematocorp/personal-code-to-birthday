@@ -27,7 +27,7 @@ export default function latviaParser(code: string): ParsedDate | null {
 	return { day, month, year }
 }
 
-// Function to validate the check digit of a Latvian personal code
+// https://en.wikipedia.org/wiki/National_identification_number#Latvia
 function isValidChecksum(personalCode: string): boolean {
 	const weights = [1, 6, 3, 7, 9, 10, 5, 8, 4, 2]
 

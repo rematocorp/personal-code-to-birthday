@@ -24,6 +24,7 @@ export default function romaniaParser(code: string): ParsedDate | null {
 	return { day, month, year }
 }
 
+// https://github.com/vimishor/cnp-spec/blob/master/spec.md
 function isValidChecksum(code: string): boolean {
 	const weights = [2, 7, 9, 1, 4, 6, 3, 5, 8, 2, 7, 9]
 	let sum = 0

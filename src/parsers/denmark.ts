@@ -33,6 +33,7 @@ export default function denmarkParser(code: string): ParsedDate | null {
 	return { day, month, year }
 }
 
+// https://en.gs1.dk/radgivning/beregn-dit-kontrolciffer
 function isValidChecksum(code: string): boolean {
 	const weights = [4, 3, 2, 7, 6, 5, 4, 3, 2] // Weights for the first 9 digits
 

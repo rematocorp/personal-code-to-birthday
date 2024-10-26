@@ -28,7 +28,7 @@ export default function norwayParser(code: string): ParsedDate | null {
 	return { day, month, year }
 }
 
-// Function to validate the check digits of a Norwegian personal code
+// https://en.wikipedia.org/wiki/National_identity_number_(Norway)#Check_digits
 function isValidChecksum(code: string): boolean {
 	const weights1 = [3, 7, 6, 1, 8, 9, 4, 5, 2] // Weights for the first checksum
 	const weights2 = [5, 4, 3, 2, 7, 6, 5, 4, 3, 2] // Weights for the second checksum, including first checksum

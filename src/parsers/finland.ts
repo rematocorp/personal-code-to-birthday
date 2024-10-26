@@ -27,6 +27,7 @@ export default function finlandParser(code: string): ParsedDate | null {
 	return { day, month, year }
 }
 
+// https://www.vero.fi/globalassets/tietoa-verohallinnosta/ohjelmistokehittajille/finnish-tax-administration_the-control-character-for-verifying-the-authenticity-of-finnish-business-ids-and-personal-identity-codes.pdf
 function isValidChecksum(code: string): boolean {
 	const validChars = '0123456789ABCDEFHJKLMNPRSTUVWXY'
 

@@ -25,6 +25,7 @@ export default function polandParser(code: string): ParsedDate | null {
 	return { day, month, year }
 }
 
+// https://en.wikipedia.org/wiki/PESEL#Checksum_calculation
 function isValidChecksum(code: string): boolean {
 	const weights = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3]
 	const digits = code.slice(0, 10).split('').map(Number)

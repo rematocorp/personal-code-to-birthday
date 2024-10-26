@@ -25,6 +25,7 @@ export default function estoniaLithuaniaParser(code: string): ParsedDate | null 
 	return { day, month, year }
 }
 
+// https://github.com/dknight/Isikukood-js/tree/master
 function isValidChecksum(code: string): boolean {
 	const weights1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1]
 	const weights2 = [3, 4, 5, 6, 7, 8, 9, 1, 2, 3]
