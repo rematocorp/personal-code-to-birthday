@@ -2,6 +2,8 @@ import { ParsedDate } from '../types'
 import { isValidDate } from '../utils'
 
 export default function norwayParser(code: string): ParsedDate | null {
+	code = code.replace(' ', '')
+
 	if (!isValidChecksum(code)) {
 		return null
 	}
