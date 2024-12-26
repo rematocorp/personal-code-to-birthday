@@ -1,5 +1,6 @@
 # Personal Code to Birthday
 
+![NPM Version](https://img.shields.io/npm/v/%40remato%2Fpersonal-code-to-birthday)
 [![Build](https://img.shields.io/github/actions/workflow/status/rematocorp/personal-code-to-birthday/ci.yml)](https://github.com/rematocorp/personal-code-to-birthday/actions/workflows/ci.yml)
 [![Codecov](https://img.shields.io/codecov/c/github/rematocorp/personal-code-to-birthday?token=NDT35FM2LG&style=flat)](https://codecov.io/gh/rematocorp/personal-code-to-birthday)
 
@@ -7,14 +8,14 @@ Converts personal identification codes from various countries into birthdate.
 
 ### Features
 
--   **Automatic Birthdate Extraction**: Effortlessly extracts birthdates from national ID codes.
--   **Built-in Validation**: Confirms personal code validity using checksum verification before returning a date.
--   **Country-Agnostic**: Automatically identifies and processes the country format, requiring no additional parameters.
--   **Lightweight & Seamless Integration**: Designed for easy integration into any project with minimal setup.
+- **Automatic Birthdate Extraction**: Effortlessly extracts birthdates from national ID codes.
+- **Built-in Validation**: Confirms personal code validity using checksum verification before returning a date.
+- **Country-Agnostic**: Automatically identifies and processes the country format, requiring no additional parameters.
+- **Lightweight & Seamless Integration**: Designed for easy integration into any project with minimal setup.
 
 ### Limitations
 
--   **Date Range Restriction**: Only supports personal codes issued from 1900 to the present. Future-dated codes are not currently supported.
+- **Date Range Restriction**: Only supports personal codes issued from 1900 to the present. Future-dated codes are not currently supported.
 
 ### Installation
 
