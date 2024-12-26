@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="profile" href="https://gmpg.org/xfn/11" />
+
+		<title>personal-code-to-birthday</title>
+		<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="preload"
+			as="style"
+			href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@400;500;600;700&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			media="print"
+			onload="this.onload=null;this.removeAttribute('media');"
+			href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@400;500;600;700&display=swap"
+		/>
+
+		<style>
+			:root {
+				--color-black: #10191f;
+				--color-white: #ffffff;
+				--color-grey-400: #a7b0b6;
+				--color-grey-800: #2a3339;
+				--color-yellow: #f7da61;
+				--color-orange: #eead09;
+				--color-red: #df4b22;
+				--color-blue: #0e86f5;
+			}
+
+			::selection {
+				color: var(--color-black);
+				background: var(--color-blue);
+			}
+
+			body {
+				margin: 0;
+				padding: 64px 16px 128px;
+
+				background-color: var(--color-black);
+				color: var(--color-white);
+
+				font-family: 'Reddit Mono', serif;
+				font-optical-sizing: auto;
+				font-weight: 400;
+				font-style: normal;
+				font-size: 16px;
+				line-height: 24px;
+			}
+
+			h1 {
+				font-size: 36px;
+				line-height: 48px;
+				margin-top: 8px;
+				margin-bottom: 16px;
+			}
+
+			p {
+				margin: 0;
+			}
+
+			a {
+				color: inherit;
+				text-decoration: none;
+			}
+
+			header,
+			main,
+			footer {
+				max-width: 800px;
+				margin: 0 auto;
+				text-align: center;
+			}
+
+			main {
+				max-width: 600px;
+				margin-bottom: 120px;
+			}
+
+			@media (max-width: 600px) and (max-height: 800px) {
+				main {
+					margin-bottom: 40px;
+				}
+			}
+
+			/* Utils */
+
+			.flex {
+				display: flex;
+			}
+
+			.direction-column {
+				flex-direction: column;
+			}
+
+			.align-center {
+				align-items: center;
+			}
+
+			.justify-center {
+				justify-content: center;
+			}
+
+			.gap-64 {
+				gap: 64px;
+			}
+
+			.mb-24 {
+				margin-bottom: 24px;
+			}
+
+			.mb-48 {
+				margin-bottom: 48px;
+			}
+
+			.mb-80 {
+				margin-bottom: 80px;
+			}
+
+			.yellow {
+				color: var(--color-yellow);
+			}
+
+			.red {
+				color: var(--color-red);
+			}
+
+			.grey {
+				color: var(--color-grey-400);
+			}
+
+			.black {
+				color: var(--color-black);
+			}
+
+			.bold {
+				font-weight: 700;
+			}
+
+			.font-14 {
+				font-size: 14px;
+				line-height: 20px;
+			}
+
+			.font-20 {
+				font-size: 20px;
+				line-height: 32px;
+			}
+
+			.underline-links a {
+				text-decoration: underline;
+				text-underline-offset: 4px;
+
+				transition: 200ms ease text-underline-offset;
+			}
+
+			.underline-links a:hover {
+				text-underline-offset: 6px;
+			}
+
+			.hover-scale {
+				transition: transform 0.2s;
+			}
+
+			.hover-scale:hover {
+				transform: scale(120%);
+			}
+
+			.dirty-reveal {
+				transition: 500ms ease-in all;
+			}
+
+			body:not(.dirty) .dirty-reveal {
+				margin: 0;
+				height: 0;
+				opacity: 0;
+			}
+
+			.dirty .dirty-reveal {
+				height: 56px;
+				opacity: 1;
+			}
+
+			@media (max-width: 600px) {
+				.md\:font-14 {
+					font-size: 14px;
+					line-height: 20px;
+				}
+			}
+
+			@media (max-width: 400px) {
+				.sm\:font-12 {
+					font-size: 12px;
+					line-height: 16px;
+				}
+			}
+
+			/* Custom components */
+
+			.flags {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-wrap: wrap;
+				gap: 32px;
+				font-size: 32px;
+			}
+
+			.input-wrapper,
+			.output-wrapper {
+				position: relative;
+			}
+
+			.label {
+				position: absolute;
+				top: 24px;
+				left: 16px;
+
+				font-size: 12px;
+				line-height: 16px;
+				font-weight: 700;
+			}
+
+			@media (max-width: 600px) {
+				.label {
+					transform: rotate(-90deg);
+					left: 0;
+				}
+			}
+
+			.input {
+				width: 100%;
+				max-width: 600px;
+				height: 64px;
+				padding: 0;
+				text-align: center;
+
+				border: none;
+				border-radius: 16px;
+
+				background-color: var(--color-yellow);
+				color: var(--color-black);
+
+				font-family: 'Reddit Mono', serif;
+				font-size: 28px;
+				line-height: 40px;
+			}
+
+			.input:focus {
+				outline: 3px solid var(--color-orange);
+			}
+
+			.output {
+				width: 100%;
+				max-width: 600px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 64px;
+
+				border-radius: 16px;
+				background-color: var(--color-grey-800);
+
+				font-size: 24px;
+				line-height: 40px;
+			}
+
+			@media (max-width: 600px) {
+				.output {
+					font-size: 16px;
+				}
+			}
+
+			@media (max-width: 380px) {
+				.output {
+					font-size: 14px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header class="flex direction-column align-center gap-48 mb-80">
+			<div class="flex align-center justify-center gap-64 mb-48">
+				<a href="https://www.npmjs.com/package/@remato/personal-code-to-birthday">
+					<img src="npm.svg" width="32" height="32" class="hover-scale" />
+				</a>
+				<a href="https://remato.com">
+					<img src="remato.svg" width="64" height="64" class="hover-scale" />
+				</a>
+				<a href="https://github.com/rematocorp/personal-code-to-birthday">
+					<img src="github.svg" width="32" height="32" class="hover-scale" />
+				</a>
+			</div>
+
+			<p class="yellow bold">npm install</p>
+			<h1>
+				personal<span class="grey">-</span>code<span class="grey">-</span>to<span class="grey">-</span>birthday
+			</h1>
+			<p class="grey sm:font-12 md:font-14">/* Converts personal ID code into birthdate */</p>
+		</header>
+
+		<main>
+			<div class="input-wrapper mb-24">
+				<div class="label black">INPUT</div>
+				<input id="input" type="text" class="input" maxlength="14" />
+			</div>
+
+			<div id="question" class="underline-links dirty-reveal mb-24">
+				<div class="red font-20 bold">Question!</div>
+				<div>Got a friend or cousin in construction? <a href="https://remato.com">Show them Remato</a></div>
+			</div>
+
+			<div class="output-wrapper mb-24">
+				<div class="label yellow">OUTPUT</div>
+				<div id="output" class="output"></div>
+			</div>
+
+			<aside id="qa" class="font-14 grey underline-links dirty-reveal">
+				Incorrect result?
+				<a href="https://github.com/rematocorp/personal-code-to-birthday/blob/main/README.md" target="_blank"
+					>README</a
+				>
+				or
+				<a href="https://github.com/rematocorp/personal-code-to-birthday/issues/new" target="_blank">
+					create an issue</a
+				>
+			</aside>
+		</main>
+
+		<footer class="flex direction-column align-center">
+			<div class="grey font-20 mb-24">Supported countries</div>
+
+			<div class="flags">
+				<a
+					href="https://en.wikipedia.org/wiki/National_identification_number#Ukraine"
+					target="_blank"
+					class="hover-scale"
+					>🇺🇦</a
+				>
+				<a
+					href="https://en.wikipedia.org/wiki/National_identification_number#Estonia"
+					target="_blank"
+					class="hover-scale"
+					>🇪🇪</a
+				>
+				<a
+					href="https://en.wikipedia.org/wiki/National_identification_number#Latvia"
+					target="_blank"
+					class="hover-scale"
+					>🇱🇻</a
+				>
+				<a
+					href="https://en.wikipedia.org/wiki/National_identification_number#Lithuania"
+					target="_blank"
+					class="hover-scale"
+					>🇱🇹</a
+				>
+				<a
+					href="https://en.wikipedia.org/wiki/National_identification_number#Poland"
+					target="_blank"
+					class="hover-scale"
+					>🇵🇱</a
+				>
+				<a
+					href="https://en.wikipedia.org/wiki/National_identification_number#Finland"
+					target="_blank"
+					class="hover-scale"
+					>🇫🇮</a
+				>
+				<a
+					href="https://en.wikipedia.org/wiki/National_identification_number#Sweden"
+					target="_blank"
+					class="hover-scale"
+					>🇸🇪</a
+				>
+				<a
+					href="https://en.wikipedia.org/wiki/National_identification_number#Denmark"
+					target="_blank"
+					class="hover-scale"
+					>🇩🇰</a
+				>
+				<a
+					href="https://en.wikipedia.org/wiki/National_identification_number#Norway"
+					target="_blank"
+					class="hover-scale"
+					>🇳🇴</a
+				>
+				<a
+					href="https://en.wikipedia.org/wiki/National_identification_number#Romania"
+					target="_blank"
+					class="hover-scale"
+					>🇷🇴</a
+				>
+			</div>
+		</footer>
+
+		<script src="./index.js"></script>
+		<script>
+			function go(value, isDirty) {
+				const output = personalCodeToBirthday.default(value)
+
+				document.getElementById('output').innerHTML = JSON.stringify(output)
+					.replaceAll('":', ': ')
+					.replaceAll('"', ' ')
+					.replaceAll('}', ' }')
+
+				if (isDirty) {
+					document.querySelector('body').className = 'dirty'
+				}
+			}
+
+			const input = document.getElementById('input')
+
+			input.value = '39309260008'
+			input.focus()
+			go('39309260008')
+
+			let timer
+
+			input.addEventListener('input', (event) => {
+				if (timer) {
+					clearTimeout(timer)
+				}
+				timer = setTimeout(() => go(event.target.value, true), 500)
+			})
+		</script>
+	</body>
+</html>

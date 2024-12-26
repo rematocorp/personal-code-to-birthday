@@ -1,13 +1,13 @@
 {
 	"$schema": "https://json.schemastore.org/tsconfig",
 	"compilerOptions": {
-		"target": "ES2022",
-		"module": "NodeNext",
 		"rootDir": "./src",
-		"moduleResolution": "NodeNext",
+		"outDir": "./demo",
+		"outFile": "./demo/index.js",
+		"target": "ES2022",
+		"module": "system",
 		"baseUrl": "./",
 		"sourceMap": true,
-		"outDir": "./dist",
 		"noImplicitAny": true,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
