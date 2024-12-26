@@ -175,7 +175,7 @@
 			}
 
 			.dirty-reveal {
-				transition: 500ms ease-in all;
+				transition: 200ms ease-in all;
 			}
 
 			body:not(.dirty) .dirty-reveal {
@@ -187,6 +187,12 @@
 			.dirty .dirty-reveal {
 				height: 56px;
 				opacity: 1;
+			}
+
+			@media (max-width: 535px) {
+				.dirty .dirty-reveal {
+					height: 80px;
+				}
 			}
 
 			@media (max-width: 600px) {
