@@ -6,16 +6,17 @@
 
 Converts personal identification codes from various countries into birthdate.
 
+**[Try it out](https://rematocorp.github.io/personal-code-to-birthday/)**
+
 ### Features
 
-- **Automatic Birthdate Extraction**: Effortlessly extracts birthdates from national ID codes.
 - **Built-in Validation**: Confirms personal code validity using checksum verification before returning a date.
 - **Country-Agnostic**: Automatically identifies and processes the country format, requiring no additional parameters.
-- **Lightweight & Seamless Integration**: Designed for easy integration into any project with minimal setup.
+- **Lightweight**: Designed for easy integration into any project with no extra dependencies.
 
 ### Limitations
 
-- **Date Range Restriction**: Only supports personal codes issued from 1900 to the present. Future-dated codes are not currently supported.
+- Only supports personal codes issued from 1900 to the present. Future-dated codes are not currently supported.
 
 ### Installation
 
