@@ -1,4 +1,4 @@
-# Interesing facts about European national identification number
+# Fascinating Facts About European National Identification Numbers
 
 While developing the [personal-code-to-birthday](https://rematocorp.github.io/personal-code-to-birthday/) library, I discovered fascinating differences in how various countries design their personal ID codes. Here are some of the insights I gathered:
 
