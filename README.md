@@ -1,6 +1,6 @@
 # Personal Code to Birthday
 
-![NPM Version](https://img.shields.io/npm/v/%40remato%2Fpersonal-code-to-birthday)
+[![NPM Version](https://img.shields.io/npm/v/%40remato%2Fpersonal-code-to-birthday)](https://www.npmjs.com/package/@remato/personal-code-to-birthday)
 [![Build](https://img.shields.io/github/actions/workflow/status/rematocorp/personal-code-to-birthday/ci.yml)](https://github.com/rematocorp/personal-code-to-birthday/actions/workflows/ci.yml)
 [![Codecov](https://img.shields.io/codecov/c/github/rematocorp/personal-code-to-birthday?token=NDT35FM2LG&style=flat)](https://codecov.io/gh/rematocorp/personal-code-to-birthday)
 
