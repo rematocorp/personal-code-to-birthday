@@ -14,11 +14,11 @@
 		"lint": "eslint \"**/*.ts\""
 	},
 	"devDependencies": {
-		"@remato/eslint-config": "^1.14.0",
-		"@remato/prettier-config": "^1.0.0",
+		"@remato/eslint-config": "^2.1.1",
+		"@remato/prettier-config": "^1.1.0",
 		"@types/jest": "^29.5.14",
 		"esbuild": "^0.25.0",
-		"eslint": "^8.57.1",
+		"eslint": "^9.23.0",
 		"jest": "^29.7.0",
 		"prettier": "^3.3.3",
 		"ts-jest": "^29.2.5",
@@ -44,11 +44,6 @@
 		"collectCoverage": true,
 		"collectCoverageFrom": [
 			"src/**"
-		]
-	},
-	"eslintConfig": {
-		"extends": [
-			"@remato/eslint-config/typescript"
 		]
 	},
 	"prettier": "@remato/prettier-config"
