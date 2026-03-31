@@ -18,7 +18,7 @@
 		"@remato/prettier-config": "^1.1.0",
 		"@types/jest": "^30.0.0",
 		"esbuild": "^0.27.0",
-		"eslint": "^9.23.0",
+		"eslint": "^10.1.0",
 		"jest": "^30.0.4",
 		"prettier": "^3.3.3",
 		"ts-jest": "^29.2.5",
