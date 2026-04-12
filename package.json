@@ -11,15 +11,14 @@
 		"build": "esbuild src/index.ts --bundle --outfile=demo/index.js --target=es2015 --global-name=personalCodeToBirthday",
 		"test": "jest",
 		"prettier": "prettier --list-different \"**/*.ts\"",
-		"lint": "eslint \"**/*.ts\""
+		"lint": "oxlint"
 	},
 	"devDependencies": {
-		"@remato/eslint-config": "^2.1.1",
 		"@remato/prettier-config": "^1.1.0",
 		"@types/jest": "^30.0.0",
 		"esbuild": "^0.27.0",
-		"eslint": "^9.23.0",
 		"jest": "^30.0.4",
+		"oxlint": "^1.59.0",
 		"prettier": "^3.3.3",
 		"ts-jest": "^29.2.5",
 		"typescript": "^5.6.3"
