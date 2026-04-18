@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest'
 import personalCodeToBirthday from './index'
 
 describe('valid codes', () => {

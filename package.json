@@ -1,49 +1,27 @@
 {
-	"name": "@remato/personal-code-to-birthday",
-	"version": "1.2.1",
-	"description": "Converts personal identification codes from various countries into birthdate",
-	"license": "MIT",
-	"main": "src/index.ts",
-	"repository": {
-		"url": "https://github.com/rematocorp/personal-code-to-birthday"
-	},
-	"scripts": {
-		"build": "esbuild src/index.ts --bundle --outfile=demo/index.js --target=es2015 --global-name=personalCodeToBirthday",
-		"test": "jest",
-		"prettier": "prettier --list-different \"**/*.ts\"",
-		"lint": "oxlint"
-	},
-	"devDependencies": {
-		"@remato/prettier-config": "^1.1.0",
-		"@types/jest": "^30.0.0",
-		"esbuild": "^0.28.0",
-		"jest": "^30.0.4",
-		"oxlint": "^1.59.0",
-		"prettier": "^3.3.3",
-		"ts-jest": "^29.2.5",
-		"typescript": "^5.6.3"
-	},
-	"jest": {
-		"preset": "ts-jest",
-		"testEnvironment": "node",
-		"moduleFileExtensions": [
-			"js",
-			"ts"
-		],
-		"testMatch": [
-			"**/*.test.ts"
-		],
-		"testPathIgnorePatterns": [
-			"/node_modules/",
-			"/dist/"
-		],
-		"transform": {
-			"^.+\\.ts$": "ts-jest"
-		},
-		"collectCoverage": true,
-		"collectCoverageFrom": [
-			"src/**"
-		]
-	},
-	"prettier": "@remato/prettier-config"
+  "name": "@remato/personal-code-to-birthday",
+  "version": "1.2.2",
+  "description": "Converts personal identification codes from various countries into birthdate",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "repository": {
+    "url": "https://github.com/rematocorp/personal-code-to-birthday"
+  },
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --outfile=demo/index.js --target=es2015 --global-name=personalCodeToBirthday",
+    "test": "vitest run",
+    "prettier": "prettier --list-different \"**/*.ts\"",
+    "lint": "oxlint",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@remato/prettier-config": "^1.1.0",
+    "@vitest/coverage-v8": "^4.1.4",
+    "esbuild": "^0.28.0",
+    "oxlint": "^1.60.0",
+    "prettier": "^3.8.3",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.4"
+  },
+  "prettier": "@remato/prettier-config"
 }

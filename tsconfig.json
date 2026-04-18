@@ -1,12 +1,10 @@
 {
 	"$schema": "https://json.schemastore.org/tsconfig",
 	"compilerOptions": {
-		"rootDir": "./src",
 		"outDir": "./demo",
-		"outFile": "./demo/index.js",
 		"target": "ES2022",
-		"module": "system",
-		"baseUrl": "./",
+		"module": "esnext",
+		"moduleResolution": "bundler",
 		"sourceMap": true,
 		"noImplicitAny": true,
 		"esModuleInterop": true,
